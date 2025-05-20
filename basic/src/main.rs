@@ -1,11 +1,6 @@
 mod borrowing;
 mod enums;
-
-fn find_pallindrome(_word: String) -> i8 {
-
-    return 0;
-}
-
+mod exception;
 
 fn main() {
     // let word: String = String::from("abccba");
@@ -17,22 +12,39 @@ fn main() {
 
     // println!("{}", my)
     //
-    let user: User = create_obj();
-    println!("User {} has email {} and there login count is {}", user.name, user.email, user.login_count );
+    // let user: User = create_obj();
+    // println!(
+    //     "User {} has email {} and there login count is {}",
+    //     user.name, user.email, user.login_count
+    // );
 
-    enums::start_enum();
+    // enums::start_enum();
+
+    let a = 10;
+    let b = 0;
+    let divide = exception::divide(a, b);
+
+    match divide {
+        Ok(result) => println!("Division of {} with {} is: {}", a, b, result),
+        Err(error) => println!("Error occured: {}", error)
+    }
+
 
 }
 
-struct User {                                                       name: String,                                                   email: String,
-    login_count: i64,                                               active: bool                                                }
+struct User {
+    name: String,
+    email: String,
+    login_count: i64,
+    active: bool,
+}
 
 fn create_obj() -> User {
     let user = User {
         name: String::from("Pawan Sharma"),
         email: String::from("pawan@gmail.com"),
         login_count: 10,
-        active: false
+        active: false,
     };
 
     return user;
