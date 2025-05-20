@@ -1,6 +1,12 @@
+use core::fmt;
+
+use rand::{rng, Rng};
+use chrono::{Utc, Local};
+
 mod borrowing;
 mod enums;
 mod exception;
+mod optional;
 
 fn main() {
     // let word: String = String::from("abccba");
@@ -20,14 +26,40 @@ fn main() {
 
     // enums::start_enum();
 
-    let a = 10;
-    let b = 0;
-    let divide = exception::divide(a, b);
+    // let a = 10;
+    // let b = 0;
+    // let divide = exception::divide(a, b);
 
-    match divide {
-        Ok(result) => println!("Division of {} with {} is: {}", a, b, result),
-        Err(error) => println!("Error occured: {}", error)
-    }
+    // match divide {
+    //     Ok(result) => println!("Division of {} with {} is: {}", a, b, result),
+    //     Err(error) => println!("Error occured: {}", error)
+    // }
+
+    // let letter = 'a';
+    // let sentence = String::from("Testing a file");
+
+    // let index = optional::find_first_occurence(&sentence, letter);
+
+    // match index {
+    //     Some(idx) => println!("Index of {} in {} is: {}", letter, sentence, idx),
+    //     None => println!("Letter {} is not found in {}", letter, sentence)
+    // }
+
+    let mut rng = rng();
+    let i: u32 = rng.random();
+
+    println!("{}", i);
+
+    let now = Utc::now();
+    println!("Current UTC DateTime {}", now);
+    
+    let formatted = now.format("%Y-%m-%d");
+    println!("Formatted Current UTC DateTime {}", formatted);
+    
+    let local = Local::now();
+    println!("Current  DateTime {}", local);
+
+
 
 
 }

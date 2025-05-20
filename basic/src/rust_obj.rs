@@ -13,7 +13,7 @@ fn crrate_obj() -> User {
         email: String::from("pawan@gmail.com"),
         login_count: 10,
         active: false
-    }
+    };
 
-    return user
+    return user;
 }
