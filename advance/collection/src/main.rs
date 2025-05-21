@@ -1,6 +1,7 @@
 mod hashmap;
 mod iterators;
 mod iteradapter;
+mod string_slice;
 
 fn main(){
     // let mut vect = Vec::new();
@@ -22,8 +23,19 @@ fn main(){
 
     // iterators::main();
 
-    iteradapter::main();
+    // iteradapter::main();
 
+    // Strings
+    // let name = String::from("hello world"); // String type
+    // let name_slice = &name; // Has a `view` into the original string is a reference
+    // let string_literal = "hello world"; // literal is also an &str but it points to directly to an address in the binary.
+    // string_slice::main();
+
+    // string slice
+    let sentence = String::from("Hello World, Barun Tiwary");
+
+    let sentence_first_word = string_slice::first_word(&sentence);
+    println!("{}", sentence_first_word);
 }
 
 
